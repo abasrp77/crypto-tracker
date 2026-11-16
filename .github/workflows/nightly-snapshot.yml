@@ -1,0 +1,28 @@
+name: Nightly Portfolio Snapshot
+
+on:
+  schedule:
+    # Runs every night at 23:30 UTC (03:00 AM Tehran Time / IRST)
+    - cron: '30 23 * * *'
+  workflow_dispatch: # Allows manual 1-click execution from GitHub Actions tab
+
+jobs:
+  take-snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Snapshot Endpoint
+        run: |
+          response=$(curl -s -w "\nHTTP_STATUS:%{http_code}" -X POST "${{ secrets.APP_URL }}/api/cron/snapshot" \
+            -H "Authorization: Bearer ${{ secrets.CRON_SECRET }}" \
+            -H "Content-Type: application/json")
+          
+          body=$(echo "$response" | sed -e 's/HTTP_STATUS\:.*//g')
+          status=$(echo "$response" | tr -d '\n' | sed -e 's/.*HTTP_STATUS://')
+          
+          echo "Response Status: $status"
+          echo "Response Body: $body"
+          
+          if [ "$status" -ne 200 ]; then
+            echo "Failed to take snapshot. Status: $status"
+            exit 1
+          fi
