@@ -1,0 +1,39 @@
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+ngrok.exe
+*.exe
+.agents
+.claude
+.windsurf
+.clineignore
+.clinerules
+.geminiignore
+skills-lock.json
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+/app/generated/prisma
+*.db
+*.db-journal
+prisma/*.db
+prisma/*.db-journal
