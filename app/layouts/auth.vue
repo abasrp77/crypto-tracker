@@ -13,9 +13,9 @@
     </div>
 
     <!-- Centered content wrapper: perfectly centered without scrollbars, scrolling naturally on low-height screens -->
-    <div class="my-auto w-full flex flex-col items-center py-6 sm:py-8">
+    <div class="my-auto w-full flex flex-col items-center py-4 sm:py-6">
       <!-- Platform Header / Logo -->
-      <div class="mb-6 sm:mb-8 flex items-center gap-2.5 sm:gap-3 relative z-10">
+      <div class="mb-4 sm:mb-6 flex items-center gap-2.5 sm:gap-3 relative z-10">
         <div
           class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-primary flex items-center justify-center text-white shadow-lg shadow-primary/30"
         >
@@ -40,7 +40,7 @@
 
       <!-- Centered Auth Card Form -->
       <div
-        class="animate-scale-in origin-center w-full max-w-[420px] bg-dark-800 border border-dark-600 rounded-2xl p-5 sm:p-8 shadow-2xl relative z-20 backdrop-blur-sm"
+        class="animate-scale-in origin-center w-full max-w-[420px] bg-dark-800 border border-dark-600 rounded-2xl p-5 sm:p-7 shadow-2xl relative z-20 backdrop-blur-sm"
       >
         <Transition
           name="auth-collapse"
@@ -56,7 +56,7 @@
 
       <!-- Minimal Footer -->
       <footer
-        class="mt-6 sm:mt-8 text-center text-[11px] sm:text-xs text-gray-500 relative z-10"
+        class="mt-4 sm:mt-6 text-center text-[11px] sm:text-xs text-gray-500 relative z-10"
       >
         &copy; {{ new Date().getFullYear() }} CryptoTracker. All rights reserved.
       </footer>

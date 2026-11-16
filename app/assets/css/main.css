@@ -4,11 +4,30 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #27272a transparent;
 }
 
-/* html {
-  scrollbar-gutter: stable;
-} */
+/* Global Dark Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #52525b; /* zinc-600 */
+}
+
 .custom-scrollbar {
   scrollbar-width: thin;
   scrollbar-color: #27272a transparent;

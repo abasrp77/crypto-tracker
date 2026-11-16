@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
-    <div class="text-center mb-6 sm:mb-8">
-      <h1 class="text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">
+    <div class="text-center mb-4 sm:mb-6">
+      <h1 class="text-xl sm:text-2xl font-bold text-white mb-1.5">
         Create an Account
       </h1>
       <p class="text-xs sm:text-sm text-gray-400">
@@ -11,7 +11,7 @@
 
     <!-- General Server Error -->
     <UiCollapse>
-      <div v-if="generalError" class="mb-5 sm:mb-6">
+      <div v-if="generalError" class="mb-4">
         <div
           class="p-2.5 sm:p-3 rounded-lg bg-crypto-red/10 border border-crypto-red/30 text-crypto-red text-xs sm:text-sm text-center"
         >
@@ -20,7 +20,7 @@
       </div>
     </UiCollapse>
 
-    <form @submit.prevent="handleRegister" class="space-y-4">
+    <form @submit.prevent="handleRegister" class="space-y-3 sm:space-y-3.5">
       <UiInput
         v-model="form.name"
         v-model:error="errors.name"
@@ -50,14 +50,14 @@
       <button
         type="submit"
         :disabled="isLoading"
-        class="w-full mt-2 py-3 px-4 rounded-xl bg-primary hover:bg-primary-hover text-white text-sm sm:text-base font-medium shadow-lg transition duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99]"
+        class="w-full mt-1.5 py-2.5 sm:py-3 px-4 rounded-xl bg-primary hover:bg-primary-hover text-white text-sm sm:text-base font-medium shadow-lg transition duration-200 flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.99]"
       >
         <span v-if="!isLoading">Sign Up</span>
         <span v-else class="flex items-center gap-2">Creating account...</span>
       </button>
     </form>
 
-    <div class="relative my-5 sm:my-6">
+    <div class="relative my-4 sm:my-5">
       <div class="absolute inset-0 flex items-center">
         <div class="w-full border-t border-dark-600"></div>
       </div>
